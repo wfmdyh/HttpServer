@@ -1,0 +1,20 @@
+1.OnStart()
+  -->theServer.run()
+
+2.HTTPServer::run()
+  -->_network.init()
+  -->initListenSocket()
+  -->_network.add()
+  -->doAccept()
+
+  2.1
+  IOCPNetWork::init()
+    -->CreateIoCompletionPort()
+    -->_timerQueue.init()
+    -->_lockPool.init()
+    创建工作线程
+    -->_tids[i] = _beginthreadex()  --> serviceProc
+
+  2.2
+  HTTPServer::initListenSocket()
+  
